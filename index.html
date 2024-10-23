@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login - EduBuddy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        .page {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .container-fluid {
+            flex: 1;
+        }
+
+        .top-row {
+            background-color: #1e1e1e;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            color: white;
+            margin-left: 15px;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 8px 15px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+            background-color: #fff;
+            width: 200px;
+        }
+
+        .search-bar button {
+            padding: 8px 15px;
+            font-size: 14px;
+            background-color: #e15f41;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #d64933;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #f7c602, #e15f41);
+            color: white;
+            min-height: calc(100vh - 80px);
+            text-align: center;
+        }
+
+        .content img {
+            max-height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .content h2 {
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+
+        .login-box {
+            background-color: white;
+            color: #333;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            margin-top: 30px;
+        }
+
+        .login-box h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-floating {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .form-floating input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .form-floating label {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            font-size: 0.9em;
+            color: #888;
+            transition: all 0.2s ease;
+            pointer-events: none;
+        }
+
+        .form-floating input:focus + label,
+        .form-floating input:not(:placeholder-shown) + label {
+            top: 5px;
+            font-size: 0.8em;
+            color: #e15f41;
+        }
+
+        .form-floating input:focus {
+            outline: none;
+            border-color: #e15f41;
+            box-shadow: 0 0 5px rgba(225, 95, 65, 0.3);
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox label {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .btn-primary,
+        .btn-warning,
+        .btn-info {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #e15f41;
+            color: white;
+        }
+
+        .btn-warning {
+            background-color: #f7c602;
+            color: white;
+        }
+
+        .btn-info {
+            background-color: #1e88e5;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #d64933;
+        }
+
+        .btn-warning:hover {
+            background-color: #e1b202;
+        }
+
+        .btn-info:hover {
+            background-color: #1565c0;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+
+            .login-box {
+                padding: 20px;
+            }
+
+            .content h2 {
+                font-size: 2em;
+            }
+
+            .search-bar input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="container-fluid">
+            <div class="top-row px-4 text-center">
+                <div class="contact-info my-2">
+                    <span>Email: edubuddy@vision.org.in</span> | 
+                    <span>Tel: +918738953758, +918449600067</span>
+                </div>
+
+                <!-- Search bar -->
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." />
+                    <button type="submit">Search</button>
+                </div>
+
+                <div class="nav-links">
+                    <a href="About" title="About EduBuddy" class="btn btn-info">About EduBuddy</a>
+                    <a href="https://www.facebook.com/profile.php?id=61555427464870" target="_blank">Facebook</a>
+                    <a href="https://www.instagram.com/stubuddy.co.in/" target="_blank">Instagram</a>
+                </div>
+            </div>
+
+            <main>
+                <article class="content">
+                    <div>
+                        <img src="https://edubuddydata.blob.core.windows.net/project-images/logo.png" alt="EduBuddy Logo">
+                        <h2><span style="color:gold">EDU</span>BUDD<span style="color:gold">Y</span>: The Future of School Management</h2>
+                    </div>
+
+                    <div class="login-box">
+                        <h3>Parents/Student Login</h3>
+                        <section>
+                            <form method="post" action="/Account/StudentLogin">
+                                <input type="hidden" name="_handler" value="login" />
+                                <input type="hidden" name="__RequestVerificationToken" value="token" />
+
+                                <div class="form-floating mb-3">
+                                    <input id="SchoolId" autocomplete="SchoolId" aria-required="true" placeholder="07" name="Input.SchoolId" required />
+                                    <label for="SchoolId">School ID</label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input id="StudentId" autocomplete="username" aria-required="true" placeholder="Student ID" name="Input.StudentId" required />
+                                    <label for="StudentId">Student ID</label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="password" autocomplete="current-password" aria-required="true" placeholder="Password" name="Input.Password" required />
+                                    <label for="password">Password</label>
+                                </div>
+
+                                <div class="checkbox mb-3">
+                                    <label>
+                                        <input type="checkbox" name="Input.RememberMe" />
+                                        Remember me
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Log in</button>
+                            </form>
+
+                            <a class="btn btn-warning" href="/Account/ForgotPasswordStudent">Forgot Password</a>
+                            <a class="btn btn-info" href="/Account/Login">Staff Login</a>
+                        </section>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
